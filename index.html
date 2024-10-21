@@ -1,0 +1,531 @@
+{% extends "parent/base.html" %}
+{% load static %}
+{% block title %}suntech{% endblock title %}
+
+
+{% block content %}
+
+  {% if messages %}
+      <ul>
+          {% for message in messages %}
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+    <!--Contents-->
+    <main>
+      <!-- ====== end community ====== -->
+
+      <!-- ====== start services ====== -->
+      <section class="services section-padding style-6">
+        <div class="container">
+          <div class="section-head mb-40 text-center style-6">
+            <h2 class="mb-20">
+              آشنایی با
+              <span> <small>خدمات</small> </span>
+            </h2>
+            <p>خورشید تکلونوژی فضای دیجیتال و کسب و کار شما</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="services-slider position-relative style-6">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                {% for i in Services %}
+                <div class="swiper-slide">
+
+                  
+                  <a href="{% static "page-services-5.html" %}" class="service-card style-6">
+                    <div class="icon">
+                      <img src="{{i.image.url}}" alt="" />
+                    </div>
+                    <div class="info">
+                      <h5>{{i.title}}</h5>
+                      <div class="text">
+                       {{i.descriptions}}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a
+              href="{% static "page-services-5.html" %}"
+              class="btn rounded-pill butn-blue6 hover-blue2 sm-butn fw-bold me-3"
+            >
+              <span>
+                ارتباط با ما
+                <i class="bi bi-arrow-left ms-1"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ====== end services ====== -->
+      <!-- ====== start about ====== -->
+      <section id="about" class="about section-padding style-5">
+        <div class="content pb-0">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-4 order-2 order-lg-0">
+                <div class="section-head mb-30 style-5">
+                  <h2>درباره<span>سانتک</span></h2>
+                </div>
+                <p>
+                  شرکت دیجیتال مارکتینگ سانتک، به شما کمک می‌کند تا به راحتی کسب
+                  و کارتان را به دنیای آنلاین منتقل کنید . و برند خود را به
+                  دنیای از ارزش و تفاوت ببرید
+                </p>
+                <p class="mt-20">
+                  تیم ما از کارشناسان متخصص حرفه‌ای تشکیل شده که با استفاده از
+                  جدیدترین ابزارهای دیجیتال و بروزترین متدهای برنامه نویسی دنیا،
+                  به شما کمک می‌کنند تا تجربه‌ای حرفه‌ای در فضای دیجیتال داشته
+                  باشید. یک متخصص خوب، کلید موفقیت شما در دنیای دیجیتال و انتقال
+                  ارزش و هویت برندتان است.
+                </p>
+              </div>
+              <div class="col-lg-8 order-0 order-lg-2">
+                <div class="img main-img3">
+                  <img
+                    src="{% static "img/about/about_s5_3_1.png" %}"
+                    alt=""
+                    class="img-body"
+                  />
+                  <img src="{% static "img/about/about_s5_3_2.png" %}" alt="" />
+                  <img src="{% static "img/about/about_s5_3_3.png" %}" alt="" />
+                  <img src="{% static "img/about/about_s5_3_4.png" %}" alt="" />
+                  <img src="{% static "img/about/about_s5_3_5.png" %}" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====== end about ====== -->
+
+      <!-- ====== start portfolio ====== -->
+      <section id="portfolio" class="portfolio section-padding bg-gray style-1">
+        <div class="container" id="portfolio">
+          <div class="row">
+            <div class="col offset-lg-1">
+              <div class="section-head mb-60">
+                <h6 class="color-main text-uppercase wow fadeInUp">
+                  نمونه کار
+                </h6>
+                <h2 class="wow fadeInUp">
+                  آخرین پروژه های <span class="fw-normal">کار شده</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="content wow fadeIn slow">
+            <div class="portfolio-slider">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="portfolio-card">
+                  
+                  
+                  {% for project in Projects %}
+                  <div class="swiper-slide">
+                    <div class="portfolio-card">
+                      <div class="img">
+                        <img src="{{ project.image_p.url }}" alt="" />
+                      </div>
+                      <div class="info">
+                        <h5>
+                          <a href="{% url "home:project-detail" project.id %}">{{ project.title }}</a>
+                        </h5>
+                        <small class="d-block color-main text-uppercase">
+                          <a href="#">{{ project.subtitle }}</a>
+                        </small>
+                        <div class="text">
+                          {{ project.description }}
+                        </div>
+                        <div class="tags">
+                          {% for tag in tags %}
+                            <a href="#" class="tag">{{ tag.title }}</a>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                   
+
+                  {% comment %} <div class="swiper-slide">
+                    <div class="portfolio-card">
+                      <div class="img">
+                        <img
+                          src="{% static "img/Latest-services/Latest-services (2).jpg" %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <h5>
+                          <a href="{% static "page-single-project-5.html" %}"> لندینگ پیچ </a>
+                        </h5>
+                        <small class="d-block color-main text-uppercase"
+                          ><a href="#">توسعه وب سایت,</a>
+                          <a href="#">طراحی UI/UX </a></small
+                        >
+                        <div class="text">
+                          برای حذف نقاط دردناک گردش کار، پیاده‌سازی فناوری و
+                          برنامه جدید، به ذهن برتر ما اعتماد کنید.
+                        </div>
+                        <div class="tags">
+                          <a href="#">وردپرس</a>
+                          <a href="#">PHP</a>
+                          <a href="#">HTML/CSS</a>
+                          <a href="#">فیگما</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="portfolio-card">
+                      <div class="img">
+                        <img
+                          src="{% static "img/Latest-services/Latest-services (2).jpg" %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <h5>
+                          <a href="{% static "page-single-project-5.html" %}"> لندینگ پیچ </a>
+                        </h5>
+                        <small class="d-block color-main text-uppercase"
+                          ><a href="#">توسعه وب سایت,</a>
+                          <a href="#">طراحی UI/UX </a></small
+                        >
+                        <div class="text">
+                          برای حذف نقاط دردناک گردش کار، پیاده‌سازی فناوری و
+                          برنامه جدید، به ذهن برتر ما اعتماد کنید.
+                        </div>
+                        <div class="tags">
+                          <a href="#">وردپرس</a>
+                          <a href="#">PHP</a>
+                          <a href="#">HTML/CSS</a>
+                          <a href="#">فیگما</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="portfolio-card">
+                      <div class="img">
+                        <img
+                          src="{% static "img/Latest-services/Latest-services (3).jpg" %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <h5>
+                          <a href="{% static "page-single-project-5.html" %}">
+                            بازی AR/VR War 1986
+                          </a>
+                        </h5>
+                        <small class="d-block color-main text-uppercase"
+                          ><a href="#">توسعه بازی</a></small
+                        >
+                        <div class="text">
+                          برای حذف نقاط دردناک گردش کار، پیاده‌سازی فناوری و
+                          برنامه جدید، به ذهن برتر ما اعتماد کنید.
+                        </div>
+                        <div class="tags">
+                          <a href="#">VR/AR</a>
+                          <a href="#">iOS & Android</a>
+                          <a href="#">یونیتی</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="portfolio-card">
+                      <div class="img">
+                        <img
+                          src="{% static "img/Latest-services/Latest-services (4).jpg" %}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="info">
+                        <h5>
+                          <a href="{% static "page-single-project-5.html" %}"> لندینگ پیچ </a>
+                        </h5>
+                        <small class="d-block color-main text-uppercase"
+                          ><a href="#">توسعه وب سایت,</a>
+                          <a href="#">طراحی UI/UX </a></small
+                        >
+                        <div class="text">
+                          برای حذف نقاط دردناک گردش کار، پیاده‌سازی فناوری و
+                          برنامه جدید، به ذهن برتر ما اعتماد کنید.
+                        </div>
+                        <div class="tags">
+                          <a href="#">وردپرس</a>
+                          <a href="#">PHP</a>
+                          <a href="#">HTML/CSS</a>
+                          <a href="#">فیگما</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> {% endcomment %}
+                </div>
+              </div>
+
+              <!-- ====== slider pagination ====== -->
+              <div class="swiper-pagination"></div>
+
+              <!-- ====== slider navigation ====== -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+        <img src="{% static "img/projects/prog/shap_r.png" %}" alt="" class="shap_r" />
+        <img src="{% static "img/projects/prog/shap_l.png" %}" alt="" class="shap_l" />
+      </section>
+      <!-- ====== end portfolio ====== -->
+      <!-- ====== start clients ====== -->
+      <section class="clients style-5 pb-100" data-scroll-index="2">
+        <div class="section-head text-center mb-40 style-5">
+          <h2 class="mb-20">
+            شرکت‌های که با <span>سانتک</span>همکاری داشته اند
+          </h2>
+        </div>
+        <div class="content">
+          <div class="clients-slider5">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                
+                {% for a in Assist %}
+                <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{{a.image.url}}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                  
+                {% endfor %}
+                  
+
+                {% comment %} <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img/Logo-companies used/market (1).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div> {% endcomment %}
+                {% comment %} <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img/Logo-companies used/market (2).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div> {% endcomment %}
+                {% comment %} <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img/Logo-companies used/market (3).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img//Logo-companies used/market (4).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img//Logo-companies used/market (5).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img">
+                    <img
+                      src="{% static "img//Logo-companies used/market (6).png" %}"
+                      alt=""
+                    />
+                  </a>
+                </div> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====== end clients ====== -->
+
+      <!-- ====== start blog ====== -->
+      <section id="blogs" class="blog style-8 bg-gray2">
+        <div class="container">
+          <div class="content section-padding wow fadeInUp">
+            <div class="section-head text-center style-8 mb-80">
+              <h3>وبلاگ ما</h3>
+            </div>
+            <div class="blog-content">
+              {% for i in blogs|slice:1 %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="main-post wow fadeInUp">
+                      <div class="img img-cover">
+                        <img src="{{i.image_blog.url}}" alt="" />
+                        <div class="tags">
+                          <a href="{% url 'blogs:blog-details' i.id %}"> {{i.category.name}} </a>
+                        </div>
+                      </div>
+                      <div class="info pt-30">
+                        <div class="date-author">
+                          <a href="{% url 'blogs:blog-details' i.id %}" class="date"> {{i.created_at}} </a>
+                          <span class="color-999 mx-3"> | </span>
+                          <a href="{% url 'blogs:blog-details' i.id %}" class="author color-999">
+                            توسط <span class="color-000 fw-bold"> {{i.author}} </span>
+                          </a>
+                        </div>
+                        <h4 class="title">
+                          <a href="#">
+                            {{i.title}}</a
+                          >
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+              {% endfor %}  
+                <div class="col-lg-6">
+                  <div class="side-posts">
+                      {% for x in blogs|slice:3 %}
+                        {% comment %} {% if forloop.counter > 2 and forloop.counter < 4 %} {% endcomment %}
+                          <div class="item wow fadeInUp">
+                            <div class="img img-cover">
+                              <img src="{{x.image_blog.url}}" alt="" />
+                            </div>
+                            <div class="info">
+                              <div class="date-author">
+                                <a href="{% url 'blogs:blog-details' x.id %}" class="date"> {{x.created_at}} </a>
+                                <span class="color-999 mx-3"> | </span>
+                                <a href="{% url 'blogs:blog-details' x.id %}" class="author color-999">
+                                  توسط
+                                  <span class="color-000 fw-bold"> {{x.author}} </span>
+                                </a>
+                              </div>
+                              <h4 class="title">
+                                <a href="{% url 'blogs:blog-details' x.id %}">
+                                  {{x.title}}</a
+                                >
+                              </h4>
+                            </div>
+                          </div>
+                        {% comment %} {% endif %}   {% endcomment %}
+                      {% endfor %}   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====== end blog ====== -->
+    </main>
+    <!--End-Contents-->
+
+    <!-- ====== start contact ====== -->
+    <section id="contact" class="contact style-13">
+      <div class="container">
+        <div class="content">
+          <div class="row gx-0 justify-content-between">
+            <div class="col-lg-5">
+              <div class="contact-info">
+                <div class="section-head side-title mb-40 style-13">
+                  <h2>درخواست مشاوره رایگان</h2>
+                </div>
+                <p>
+                  فرم درخواست مشاوره رایگان را پر کنید و با تیم ما در ارتباط
+                  باشید
+                </p>
+                <ul class="mt-30">
+                  <li>
+                    <p>
+                      <strong> آدرس : </strong> زاهدان پارک علم و فناوری مجتمع
+                      نوین
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <strong> ساعات کاری : </strong> شنبه - پنجشنبه : 9:00 -
+                      18:00
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <form method="POST">
+                {% csrf_token %}
+                <div class="contact-form mt-4 mt-lg-0">
+                  <div class="row gx-3 align-items-center">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        نام و نام خانوادگی:
+                        <input type="text" name="name" required class="form-control" placeholder=""
+                                {% if form.name.value %} value="{{ form.name.value }}" {% endif %}>
+                        <span class="icon"> <i class="fas fa-user"></i> </span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        ایمیل:
+                        <input type="email" name="email" class="form-control" placeholder
+                                {% if form.email.value %} value="{{ form.email.value }}" {% endif %} >
+                        <span class="icon">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <select name="subject" class="form-select">
+                          <option value="درخواست سایت"
+                                  {% if form.subject.value == 'درخواست سایت' %} selected {% endif %}>
+                                  درخواست سایت </option>
+                          <option value="درخواست مشاوره"
+                          {% if form.subject.value == 'درخواست مشاوره' %} selected {% endif %}>
+                          درخواست مشاوره </option>
+                          <option value="راه اندازی کسب و کار"
+                                  {% if form.subject.value == 'راه اندازی کسب و کار' %} selected {% endif %}>
+                                  راه اندازی کسب و کار </option>
+                      </select>
+                        <span class="icon"> <i class="fas fa-book"></i> </span>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        متن:
+    <textarea class="form-control" rows="3" name="message">{% if form.message.value %}{{ form.message.value }}{% endif %}</textarea>
+                        <span class="icon"> <i class="fas fa-pen"></i> </span>
+                      </div>
+                    </div>
+                  </div>
+                  <input  class="btn rounded-pill text-white butn-blue6" type="submit" value="ثبت درخواست " >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== end contact ====== -->
+
+{% endblock  %}
