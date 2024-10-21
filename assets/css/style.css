@@ -1132,7 +1132,7 @@ small.text {
   padding-top: 90px !important; }
 
 .pt-100 {
-  padding-top: 100px !important; }
+  padding-top: 0px !important; }
 
 .pt-150 {
   padding-top: 150px !important; }
@@ -2332,7 +2332,7 @@ small.text {
   background-color: #fff;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  margin-top: -38px; }
+ }
   .navbar.style-4 .navbar-brand {
     width: 150px;
     -o-object-fit: contain;
@@ -2362,11 +2362,7 @@ small.text {
       transition: all 0.3s ease; }
     .navbar.style-4 .navbar-nav .nav-item .nav-link:hover, .navbar.style-4 .navbar-nav .nav-item .nav-link.active {
       color: var(--color-blue4); }
-      .navbar.style-4 .navbar-nav .nav-item .nav-link:hover::before, .navbar.style-4 .navbar-nav .nav-item .nav-link.active::before {
-        opacity: 1;
-        -webkit-transform: translateX(50%) translateY(0);
-        -ms-transform: translateX(50%) translateY(0);
-        transform: translateX(50%) translateY(0); }
+
     .navbar.style-4 .navbar-nav .nav-item .nav-link .hot {
       position: absolute;
       font-size: 8px;
@@ -10505,7 +10501,8 @@ footer.style-3 {
 footer.style-4 {
   position: relative;
   background-color: #f0eff5;
-  margin-top: 200px; }
+  margin-top: 0px; 
+}
   footer.style-4 .wave {
     position: absolute;
     right: -3%;
