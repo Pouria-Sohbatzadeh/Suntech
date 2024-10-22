@@ -16,7 +16,7 @@
     <title>آی تک</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/fav.png" title="Favicon" sizes="16x16" />
+    <link rel="shortcut icon" href="assets/img/suntech_logo.png" title="Favicon" sizes="16x16" />
 
     <!-- ====== bootstrap icons cdn ====== -->
     <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap-icons%401.7.2/font/bootstrap-icons.css">
@@ -52,7 +52,7 @@
             <nav class="navbar navbar-expand-lg navbar-light style-6">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#" data-scroll-nav="0">
-                        <img src="assets/img/logo_home6.png" alt="">
+                        <img src="assets/img/suntech_logo.png" style="height: 60px;" alt="">
                     </a>
                     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -61,23 +61,39 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0" style="padding-right: 55px;">
                             <li class="nav-item dropdown">
-                                <a class="nav-link active dropdown-toggle" data-scroll-nav="1">
-                                    درباره ما
+                                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    صفحات اصلی
                                 </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                    <li><a class="dropdown-item" href="home-app-landing.html"> لندینگ اپ </a></li>
+                                    <li><a class="dropdown-item" href="home-saas-technology.html"> تکلونوژی ساس </a></li>
+                                    <li><a class="dropdown-item" href="home-marketing-startup.html"> استارتاپ بازاریابی </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="home-it-solutions.html"> فناوری اطلاعات </a></li>
+                                    <li><a class="dropdown-item" href="home-software-company.html"> شرکت نرم افزار </a></li>
+                                    <li><a class="dropdown-item" href="home-digital-agency.html"> آژانس دیجیتال </a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item">
+                            
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-scroll-nav="2">
                                     خدمات
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link" data-scroll-nav="3">
                                     نمونه کار
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="page-blog-5.html">
+                                    وبلاگ
+                                </a>
+                            </li>
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-scroll-nav="4">
                                     چرا ما
                                 </a>
@@ -86,20 +102,25 @@
                                 <a class="nav-link" data-scroll-nav="5">
                                     نظرات
                                 </a>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-scroll-nav="6">
                                     مشتریان
                                 </a>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-scroll-nav="7">
                                     تیم
                                 </a>
+                            </li> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" data-scroll-nav="1">
+                                    درباره ما
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-scroll-nav="8">
-                                    وبلاگ
+                                <a class="nav-link" href="page-contact-5.html">
+                                    تماس با ما
                                 </a>
                             </li>
                         </ul>
@@ -124,21 +145,17 @@
                         <div class="info">
                             <h6>آژانس آی تک سئو</h6>
                             <h1>تجزیه و تحلیل سئو و بازاریابی برای <span> <small>استارتاپ ها</small> </span></h1>
-                            <div class="text">
-                                تضمین بهترین بازگشت سرمایه برای نیاز کمپین سئوی سفارشی شما. <br>
-                                تجزیه و تحلیل SEO رایگان خود را دریافت کنید
-                            </div>
                             
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="assets/img/header/hand_megaphone.png" alt="" class="hand-mega slide_up_down">
-        <img src="assets/img/header/target_3d.png" alt="" class="target-3d rotate-center">
-        <img src="assets/img/header/head6_rating.png" alt="" class="head6-rating scale_up_down">
-        <img src="assets/img/header/header5_linechart.png" alt="" class="head6-charts scale_up_down">
-        <img src="assets/img/header/rocket.png" alt="" class="head6-rocket">
+        <img src="assets/img/header/logo-html-5.png" alt="" class="hand-mega slide_up_down">
+        <img src="assets/img/header/logo-react.png" alt="" class="target-3d rotate-center">
+        <img src="assets/img/header/css-logo.png" alt="" class="head6-rating scale_up_down">
+        <img src="assets/img/header/figma-logo.png" alt="" class="head6-charts scale_up_down">
+        <img src="assets/img/header/paython-logo.png" alt="" class="head6-rocket">
     </header>
     <!-- ====== end header ====== -->
 
@@ -928,10 +945,10 @@
                 </div>
             </div>
             <div class="foot">
-                <div class="row">
+                <div class="row" style="display: flex; align-items: center;">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <img src="assets/img/logo_home6.png" alt="">
+                            <img src="assets/img/suntech_logo.png" alt="" style="height: 50px;">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -939,6 +956,7 @@
                             © 2022 کپی رایت <a href="#" class="fw-bold text-decoration-underline">آی تک.</a> تمامی حقوق
                             محفوظ است. فروش در <a href="https://www.rtl-theme.com/"
                                 class="fw-bold text-decoration-underline">راستچین</a>
+
                         </small>
                     </div>
                 </div>

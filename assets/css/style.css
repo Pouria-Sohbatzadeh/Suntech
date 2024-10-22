@@ -513,7 +513,7 @@ small.text {
   background-color: #f3f7fe; }
 
 .section-padding {
-  padding: 100px 0; }
+  padding: 10px 0; }
 
 .swiper-pagination {
   width: 100%;
@@ -3230,28 +3230,31 @@ header.style-6 {
           header.style-6 .info .form .form-group input::placeholder {
             opacity: 0.7; }
   header.style-6 .hand-mega {
+    height: 170px;
     position: absolute;
     width: 20%;
-    top: 20%;
-    right: 0;
+    top: 30%;
+    right: 5%;
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: right;
     object-position: right;
     z-index: 2; }
   header.style-6 .head6-rating {
+    height: 120px;
     position: absolute;
     width: 18%;
-    bottom: 27%;
-    right: 15%;
+    bottom: 40%;
+    right: 11%;
     -o-object-fit: contain;
     object-fit: contain;
     z-index: 2; }
   header.style-6 .target-3d {
+    height: 150px;
     position: absolute;
     width: 20%;
-    bottom: -120px;
-    right: 35%;
+    bottom: -15px;
+    right: 37%;
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: right;
@@ -3266,10 +3269,10 @@ header.style-6 {
     object-fit: contain;
     z-index: 2; }
   header.style-6 .head6-rocket {
+    height: 130px;
     position: absolute;
-    width: 30%;
     bottom: 5%;
-    left: -30px;
+    left: 124px;
     z-index: 2; }
 
 header.style-7 {
@@ -13634,7 +13637,7 @@ footer.style-15 {
 
 @media screen and (max-width: 991px) {
   .section-padding {
-    padding: 70px 0; }
+    padding: 0px 0; }
   .section-head h2 {
     font-size: 25px; }
   .top-navbar.style-1 .top-links {
